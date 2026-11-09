@@ -526,3 +526,140 @@ a:focus-visible {
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ==========================================
+   NASA SPACE EXPLORER — PWA FEATURES
+   ========================================== */
+
+/* Keep elements with the hidden attribute hidden */
+[hidden] {
+  display: none !important;
+}
+
+/* Offline connection indicator */
+.offline-indicator {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border: 1px solid #f59e0b;
+  border-radius: 10px;
+  background-color: #fff7ed;
+  color: #92400e;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* PWA action section */
+.pwa-section {
+  width: 100%;
+  margin: 20px 0 28px;
+}
+
+/* Install and notification buttons */
+.pwa-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Shared PWA button styling */
+.pwa-button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Install App button */
+.install-button {
+  background-color: #0b3d91;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(11, 61, 145, 0.2);
+}
+
+.install-button:hover {
+  background-color: #092e6d;
+  transform: translateY(-2px);
+}
+
+/* Enable Notifications button */
+.notification-button {
+  background-color: #102445;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 36, 69, 0.2);
+}
+
+.notification-button:hover {
+  background-color: #1c3d70;
+  transform: translateY(-2px);
+}
+
+/* Keyboard accessibility */
+.pwa-button:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+/* Installation and notification feedback */
+.pwa-message {
+  max-width: 650px;
+  margin: 14px auto 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background-color: #eaf2ff;
+  border: 1px solid #bfdbfe;
+  color: #102445;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .pwa-section {
+    margin: 16px 0 24px;
+  }
+
+  .pwa-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pwa-button {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 18px;
+  }
+
+  .offline-indicator {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .pwa-message {
+    font-size: 13px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .pwa-button {
+    transition: none;
+  }
+
+  .pwa-button:hover {
+    transform: none;
+  }
+}

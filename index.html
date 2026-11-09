@@ -5,16 +5,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Explore NASA's Astronomy Picture of the Day through an interactive space gallery.">
+  <meta
+    name="description"
+    content="Explore NASA's Astronomy Picture of the Day through an interactive space gallery."
+  >
 
   <title>NASA Space Explorer | Astronomy Picture of the Day</title>
 
+  <!-- Progressive Web App Manifest -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- PWA Theme Color -->
+  <meta name="theme-color" content="#102445">
+
+  <!-- App Icons -->
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="./icons/icon-192.png"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="512x512"
+    href="./icons/icon-512.png"
+  >
+
+  <!-- Apple Home Screen Icon -->
+  <link
+    rel="apple-touch-icon"
+    href="./icons/icon-192.png"
+  >
+
+  <!-- iPhone and iPad Standalone Support -->
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="NASA Explorer"
+  >
+
+  <!-- Existing Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <main class="container">
+
+    <!-- Offline Status Banner -->
+    <div
+      id="offlineIndicator"
+      class="offline-indicator"
+      role="status"
+      aria-live="polite"
+      hidden
+    >
+      You are offline. Previously viewed NASA data may still be available.
+    </div>
 
     <!-- NASA Branding -->
     <header class="site-header">
@@ -32,8 +89,46 @@
       </p>
     </header>
 
+    <!-- PWA Installation and Notification Controls -->
+    <section
+      class="pwa-section"
+      aria-label="NASA Explorer app features"
+    >
+      <div class="pwa-actions">
+
+        <button
+          type="button"
+          id="installApp"
+          class="pwa-button install-button"
+          hidden
+        >
+          Install App
+        </button>
+
+        <button
+          type="button"
+          id="enableNotifications"
+          class="pwa-button notification-button"
+        >
+          Enable Notifications
+        </button>
+
+      </div>
+
+      <p
+        id="pwaMessage"
+        class="pwa-message"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></p>
+    </section>
+
     <!-- Date Range Selection -->
-    <section class="search-section" aria-label="Search NASA images">
+    <section
+      class="search-section"
+      aria-label="Search NASA images"
+    >
       <div class="filters">
 
         <div class="date-field">
@@ -70,16 +165,25 @@
     </section>
 
     <!-- Bonus LevelUp: Random Space Fact -->
-    <section class="fact-section" aria-label="Random space fact">
+    <section
+      class="fact-section"
+      aria-label="Random space fact"
+    >
       <div class="fact-content">
-        <span class="fact-icon" aria-hidden="true">✨</span>
+
+        <span
+          class="fact-icon"
+          aria-hidden="true"
+        >✨</span>
 
         <div>
           <h2>Did You Know?</h2>
+
           <p id="spaceFact">
             Discovering an interesting fact about space...
           </p>
         </div>
+
       </div>
     </section>
 
@@ -106,6 +210,7 @@
 
     <!-- Footer -->
     <footer class="site-footer">
+
       <p>
         Images and explanations provided by
         <a
@@ -131,6 +236,7 @@
       <p class="disclaimer">
         Educational student project. Not an official NASA website.
       </p>
+
     </footer>
 
   </main>
@@ -190,9 +296,12 @@
     </section>
   </div>
 
-  <!-- Keep dateRange.js before script.js -->
+  <!-- Existing NASA Application Scripts -->
   <script src="js/dateRange.js"></script>
   <script src="js/script.js"></script>
+
+  <!-- Progressive Web App Features -->
+  <script src="js/pwa.js"></script>
 
 </body>
 </html>
